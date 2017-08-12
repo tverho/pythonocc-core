@@ -26,7 +26,7 @@ cmake -G Ninja -DCMAKE_INSTALL_PREFIX=$PREFIX \
  -DOCE_INSTALL_PREFIX=$PREFIX -DOCE_ENABLE_DEB_FLAG=OFF ..
 
 # Build step
-ninja -j5 | grep Linking
+ninja
 #if [ `uname` == Darwin ]; then
   #make -j 5 | grep Built  # set to 5 on travis
 #else
