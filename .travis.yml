@@ -62,7 +62,7 @@ script:
   #- conda build oce-0.17.3
   #- conda build oce-0.18
   #- conda build oce-0.18.1
-  - travis_wait 60 conda build oce-0.18.2
+  - travis_wait 80 conda build oce-0.18.2
 
 after_success:
   - python move-conda-package.py
