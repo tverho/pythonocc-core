@@ -1,0 +1,22 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b782b41..83d6087 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -176,6 +176,17 @@ option_with_default( OCE_COPY_HEADERS_BUILD "Copy header files when building OCE
+ 
+ option_with_default( OCE_USE_TCL_TEST_FRAMEWORK "Add occt-tests target" OFF )
+ 
++# MACOSX_DEPLOYEMENT_TARGET
++if(APPLE)
++    if(DEFINED ENV{MACOSX_DEPLOYMENT_TARGET})
++      message(STATUS "MACOSX_DEPLOYMENT_TARGET set to: " $ENV{MACOSX_DEPLOYMENT_TARGET})
++      if($ENV{MACOSX_DEPLOYMENT_TARGET} MATCHES "10.9")
++          message(STATUS "Link to libc++")
++          add_definitions(-stdlib=libc++)
++      endif($ENV{MACOSX_DEPLOYMENT_TARGET} MATCHES "10.9")
++    endif(DEFINED ENV{MACOSX_DEPLOYMENT_TARGET})
++endif(APPLE)
++
+ #
+ # By default, OSX uses X11 OpenGl implementation
+ #

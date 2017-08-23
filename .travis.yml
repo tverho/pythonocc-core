@@ -22,7 +22,7 @@ matrix:
     - env: ARCH="x86_64"
       os: linux
       dist: trusty
-    - env: ARCH="x86_64"
+    - env: ARCH="x86_64" MACOSX_DEPLOYMENT_TARGET="10.9"
       os: osx
       osx_image: xcode8.3
 
