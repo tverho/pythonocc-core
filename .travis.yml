@@ -2,6 +2,9 @@ sudo: false
 
 language: cpp
 
+cache:
+  apt: true
+
 # the secure below is the binstar token
 # to genrate this secure
 # first create an anconda cloud token
@@ -19,17 +22,18 @@ env:
   global:
     - secure: "XObUZlAdB3tRpDtd0z0LaxbOnkpiulNloSevDl5g8+Z3bsBk6jX0GTkVKSryxwe2H7v+YE8crShPykBvi/MlbXOy5S2nO/PjDxJFBQDsGFygrpOnjJ2bZ0IWSLeHADwVoiZZC2yHmkcaq+c5h/fFNyepfai42jhNLFR69adXOSk="
 
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-7
+
 matrix:
   include:
     - env: ARCH="x86_64"
       os: linux
       dist: trusty
-      addons: &gcc5
-        apt:
-          packages:
-            - g++-7
-          sources:
-            - ubuntu-toolchain-r-test
     - env: ARCH="x86_64" MACOSX_DEPLOYMENT_TARGET="10.9"
       os: osx
       osx_image: xcode8.3
