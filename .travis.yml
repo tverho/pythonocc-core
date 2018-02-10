@@ -61,8 +61,6 @@ before_install:
   # necessary because of gl2ps
   - conda config --add channels https://conda.anaconda.org/conda-forge
   - conda config --add channels https://conda.anaconda.org/dlr-sc
-  # install everything required to build the receipe
-  - conda install conda-build=3.0.8 anaconda-client
 
 script:
   #- conda build oce-0.17.2
