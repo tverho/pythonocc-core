@@ -27,8 +27,7 @@ matrix:
       addons: &gcc5
         apt:
           packages:
-            - g++-5
-            - gcc-5
+            - g++-7
           sources:
             - ubuntu-toolchain-r-test
     - env: ARCH="x86_64" MACOSX_DEPLOYMENT_TARGET="10.9"
@@ -40,7 +39,7 @@ matrix:
 # https://gist.github.com/dan-blanchard/7045057
 before_install:
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
-      export CXX="g++-5" CC="gcc-5";
+      export CXX="g++-7" CC="gcc-7";
       wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh;
     else
       wget https://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh -O miniconda.sh;
@@ -54,6 +53,8 @@ before_install:
   - hash -r
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
+  # install everything required to build the receipe
+  - conda install conda-build anaconda-client
   # Useful for debugging any issues with conda
   - conda info -a
   # Add dlr-sc channel for third part libraries
