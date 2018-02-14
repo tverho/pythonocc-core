@@ -20,7 +20,7 @@ cache:
 # after that, copy/paste the secure on the following line
 env:
   global:
-    - secure: "XObUZlAdB3tRpDtd0z0LaxbOnkpiulNloSevDl5g8+Z3bsBk6jX0GTkVKSryxwe2H7v+YE8crShPykBvi/MlbXOy5S2nO/PjDxJFBQDsGFygrpOnjJ2bZ0IWSLeHADwVoiZZC2yHmkcaq+c5h/fFNyepfai42jhNLFR69adXOSk="
+    - secure: "Na2MsIe7PbTRL8k3ITcesfearRyyERz4aCsMIWc2eDj0xcdFw56i2bJ/PN0640Q/mMudsGIL+mNmsPwIY/YeRgY0+35VzT+W4hA/07GFsL+7h8KxfRlZjcbQIeLg5y7+tCvHbjCa3xw7YAp9gStdq8zpLQOjj9D5EqiQJbeLVbY="
 
 matrix:
   include:
