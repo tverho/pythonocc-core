@@ -1052,6 +1052,13 @@ class BRepExtrema_ShapeProximity {
 	:rtype: Handle_BRepExtrema_TriangleSet
 ") ElementSet2;
 		Handle_BRepExtrema_TriangleSet ElementSet2 ();
+
+/* Hack to allow checking the result */
+	%extend {
+		bool intersects() {
+			return $self->OverlapSubShapes1().Size() > 0;
+		}
+	}
 };
 
 
